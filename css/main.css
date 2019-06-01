@@ -1,0 +1,93 @@
+
+a.navbar-dropdown {
+	color: rgb(0, 0, 0);
+}
+
+a.navbar-item {
+	color: rgb(255, 255, 255);
+}
+
+a.navbar-link {
+	color: #ffffff;
+}
+
+.style {
+	padding: 1em 1em;
+}
+
+.header-style {
+	background-color: #3C5A99;
+	border-radius: 0.5em;
+}
+
+.hero-bg {
+	background-image: url(../img/hero-bg.png);
+}
+
+a.navbar-burger {
+	color: #ffffff;
+}
+
+
+.logo-column-style {
+	width: 10em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.fb-post-figure-style {
+	align-items: left;
+	padding-right: 2em;
+	text-align: justify;
+	min-width: 150px;
+	height: 260px;
+}
+
+.fb-post-image-style {
+	width: 150px;
+	height: 260px;
+}
+
+
+.column-style {
+	margin: 0.5em;
+	padding: auto 0.5em;
+	border: 0.25px;
+	border-style: solid;
+	border-color: #3C5A99;
+	border-radius: 8px;
+	box-shadow: 1px 2px 4px #3C5A99;
+	height: 25.5em;
+	min-width: 25em;
+	overflow-y: auto;
+}
+
+@media screen and (max-width:768px) {
+
+	.logo-style {
+		display: none;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.button-style {
+		margin: 0.5rem 0;
+		width: 100%;
+	}
+
+}
+
+@media screen and (min-width:769px) {
+	.menu-list-style {
+		border: 0.25px;
+		border-style: solid;
+		border-color: #3C5A99;
+		border-radius: 8px;
+		box-shadow: 1px 2px 4px #3C5A99;
+		margin: 0.5em;
+	}
+}

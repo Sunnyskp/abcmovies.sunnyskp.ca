@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ABC Movies by Sunny</title>
+  <meta name="ABC Movies" content="ABC Movies">
+  <meta name="Sunny Krishnan Pillai" content="ABC Movies">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body onload="displayPosts()" class="style">
+  <div class="columns header-style colContainer">
+    <div class="column logo-column-style is-one-fifth ">
+      <a class="logo-style" href="">
+        <!-- <img class="is-square" src="..\img\Newfb-logo.png"> -->
+      </a>
+    </div>
+    <div class="column">
+      <div class="columns">
+        <div class="column is-full ">
+          <nav class="navbar-end nav-bar-style" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand ">
+
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-end">
+
+                <a class="navbar-item">
+                  Home
+                </a>
+                <a class="navbar-item">
+                  Profile
+                </a>
+                <a class="navbar-item">
+                  Friends
+                </a>
+                <a class="navbar-item">
+                  About
+                </a>
+                <a class="navbar-item">
+                  Profile Settings
+                </a>
+                <a class="navbar-item">
+                  Report an issue
+                </a>
+                <div class="field is-grouped">
+                  <p class="control is-expanded">
+                    <input id="searchInput" class="input" type="text">
+                  </p>
+
+                  <p class="control">
+                    <a onclick="searchPost()" class="button is-info">
+                      Search
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- HEADER NAVIGATION BAR -->
+
+  <!-- HIGHER LEVEL TWO COLUMN GRID -->
+  <!-- FB POST COLUMNS -->
+  <div class="columns columns-style">
+      <div class="column">
+          <div id="movieLists" class="columns is-multiline is-centered">
+            
+    
+            <!---------NEW FB POSTS GETS ADDED HERE USING JS FUNCTION-------->
+    
+            <!-----ALSO SOME DEFAULT FB POSTS ADDED HERE USING JS FUNCTION----->
+    
+            <!-- FB POST COLUMNS END -->
+          </div>
+        </div>
+  </div>
+  <div>
+    <nav class="pagination" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
+      <a class="pagination-next">Next page</a>
+      <ul class="pagination-list">
+        <li>
+          <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 2">2</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 3">3</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- HIGHER LEVEL TWO COLUMN GRID END -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
