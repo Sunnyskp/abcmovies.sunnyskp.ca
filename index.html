@@ -13,12 +13,10 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
-<body onload="displayPosts()" class="style">
-  <div class="columns header-style colContainer">
-    <div class="column logo-column-style is-one-fifth ">
-      <a class="logo-style" href="">
-        <!-- <img class="is-square" src="..\img\Newfb-logo.png"> -->
-      </a>
+<body onload="displayPosts()">
+  <div class="columns header-style  is-vcentered">
+    <div class="column is-one-third"> 
+         <img class="logo-style" src="../img/ABCMovielogo.png"> 
     </div>
     <div class="column">
       <div class="columns">
@@ -37,34 +35,20 @@
               <div class="navbar-end">
 
                 <a class="navbar-item">
-                  Home
+                  New Releases
                 </a>
                 <a class="navbar-item">
-                  Profile
+                  Movies
                 </a>
                 <a class="navbar-item">
-                  Friends
+                  Classics
                 </a>
                 <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Profile Settings
+                  About ABCMovies
                 </a>
                 <a class="navbar-item">
                   Report an issue
                 </a>
-                <div class="field is-grouped">
-                  <p class="control is-expanded">
-                    <input id="searchInput" class="input" type="text">
-                  </p>
-
-                  <p class="control">
-                    <a onclick="searchPost()" class="button is-info">
-                      Search
-                    </a>
-                  </p>
-                </div>
               </div>
             </div>
           </nav>
@@ -73,11 +57,25 @@
     </div>
   </div>
   <!-- HEADER NAVIGATION BAR -->
-
+  <div  class="columns-style">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+      <a class="pagination-previous">Previous</a>
+      <a class="pagination-next">Next page</a>
+      <ul class="pagination-list">
+        <li><a onclick="changePage(event)" value="1" class="pagination-link" aria-label="Goto page 1">1</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a onclick="changePage(event)" value="25" class="pagination-link" aria-label="Goto page 25">25</a></li>
+        <li><a onclick="changePage(event)" class="pagination-link is-current" aria-label="Page 26" aria-current="page">26</a></li>
+        <li><a onclick="changePage(event)" class="pagination-link" aria-label="Goto page 27">27</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a onclick="changePage(event)" class="pagination-link" aria-label="Goto page 49">49</a></li>
+      </ul>
+    </nav>
+  </div>
   <!-- HIGHER LEVEL TWO COLUMN GRID -->
   <!-- FB POST COLUMNS -->
-  <div class="columns columns-style">
-      <div class="column">
+  <div class="columns ">
+      <div class="column  columns-style">
           <div id="movieLists" class="columns is-multiline is-centered">
             
     
@@ -89,20 +87,18 @@
           </div>
         </div>
   </div>
-  <div>
-    <nav class="pagination" role="navigation" aria-label="pagination">
-      <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
+  <div  class="columns-style">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+      <a class="pagination-previous">Previous</a>
       <a class="pagination-next">Next page</a>
       <ul class="pagination-list">
-        <li>
-          <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
-        </li>
-        <li>
-          <a class="pagination-link" aria-label="Goto page 2">2</a>
-        </li>
-        <li>
-          <a class="pagination-link" aria-label="Goto page 3">3</a>
-        </li>
+        <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link" aria-label="Goto page 25">25</a></li>
+        <li><a class="pagination-link is-current" aria-label="Page 26" aria-current="page">26</a></li>
+        <li><a class="pagination-link" aria-label="Goto page 27">27</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link" aria-label="Goto page 49">49</a></li>
       </ul>
     </nav>
   </div>

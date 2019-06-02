@@ -4,6 +4,7 @@ const eleClickMe= document.querySelector("#clickMe");
 const movieLists= document.querySelector("#movieLists");
 
 
+
 //To be able to send HTTP request to an external server. You must create the below object
 const xhr = new XMLHttpRequest();
 
@@ -42,8 +43,8 @@ const populateValues=()=>
 
       const jasonData=JSON.parse(xhr.responseText);
      for (let index = 0; index < jasonData.results.length; index++) {
-
-      let movieImage = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`
+      let movieDescription = jasonData.results[index].overview.substring(0, 120);
+        let movieImage = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`
         movieLists.innerHTML += `<div class="column-style column is-vcentered is-mobile is-tablet is-desktop is-widescreen is-fullhd">
         <article class="media">
           <figure class="media-left">
@@ -53,10 +54,9 @@ const populateValues=()=>
           </figure>
           <div  class="media-content">
             <div class="content">
-              <p>
-                <strong>${jasonData.results[index].title}</strong><br>
-                <div>${jasonData.results[index].overview}</div>
-              </p>
+                <strong>${jasonData.results[index].title}</strong><br><small><i>Release Date:</i> <strong>${jasonData.results[index].release_date}</strong><br><i>Movie Rating:</i> <strong>${jasonData.results[index].vote_average}/10</strong></small>
+                <div align="justify" class="div-para-style">${movieDescription}...<a><i><Strong>More Info...</Strong></i></a></div>   
+    
             </div>
           </div>
         </article>
