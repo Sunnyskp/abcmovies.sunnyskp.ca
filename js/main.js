@@ -48,7 +48,7 @@ const populateValues=()=>
           <div  class="media-content">
             <div class="content">
                 <strong>${jasonData.results[index].title}</strong><br><small><i>Release Date:</i> <strong>${dateValue}</strong><br><i>Movie Rating:</i> <strong>${jasonData.results[index].vote_average}/10</strong></small>
-                <div align="justify" class="div-para-style">${movieDescriptionSubstring}...<a><i>Read more...</i></a></div>
+                <div align="justify" class="div-para-style">${movieDescriptionSubstring}...<a onclick="displayModal()"><i>Read more...</i></a></div>
             </div>
           </div>
         </article>

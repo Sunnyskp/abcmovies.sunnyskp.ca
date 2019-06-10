@@ -82,7 +82,12 @@ div.content{
 }
 
 .logo-style{
-	width: 16em;
+	width: 20em;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	
 }
 
 @media screen and (max-width:768px) {
