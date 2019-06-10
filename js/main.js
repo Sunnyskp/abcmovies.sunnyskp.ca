@@ -64,8 +64,8 @@ movieLists.addEventListener(`click`, (event) => {
   let selectedMovie = event.target.closest(`.column-style`);
   if (!selectedMovie) return;
   let selectedMovieId= selectedMovie.id;
-// getselectedMoviesAsHTML(selectedMovieId);
 displayModal(selectedMovieId);
+// getselectedMoviesAsHTML(selectedMovieId);
 });
 
 // const getselectedMoviesAsHTML = (receivedMovieId) => {
@@ -80,7 +80,7 @@ const displayModal = (receivedMovieId) =>
   const jasonData=JSON.parse(xhr.responseText);
   let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
   movieLists.innerHTML += `<div class="modal is-active">
-  <div class="modal-background"><img src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
+  <div class="modal-background"><img class="modalBgImage" src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
   <div class="modal-card modal-style">
   <header class="modal-card-head">
   <strong>${obj.title}</strong>

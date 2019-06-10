@@ -8,6 +8,14 @@ a.navbar-item {
 	font-size: 1em;
 }
 
+.modalBgImage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+}
+
 a.navbar-link {
 	color: #052b3a23;
 }
@@ -60,7 +68,7 @@ div.content{
 } */
  
 .modal-style{
-	opacity: 0.885;
+	opacity: 0.865;
 }
 
 .column-style {
