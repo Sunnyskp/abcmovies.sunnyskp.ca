@@ -59,6 +59,9 @@ div.content{
 	height: 260px;
 } */
  
+.modal-style{
+	opacity: 0.885;
+}
 
 .column-style {
 	margin: 0.5em;

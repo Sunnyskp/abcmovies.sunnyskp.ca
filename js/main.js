@@ -38,8 +38,8 @@ const populateValues=()=>
       let dateString = new Date(jasonData.results[index].release_date);
       let dateValue = dateString.toDateString();
         let movieImage = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`
-        movieLists.innerHTML += `<div class="column-style column is-mobile is-tablet is-desktop is-widescreen is-fullhd">
-        <article class="media" Id=${movieId}>
+        movieLists.innerHTML += `<div Id=${movieId} class="column-style column is-mobile is-tablet is-desktop is-widescreen is-fullhd">
+        <article class="media">
           <figure class="media-left">
             <p class="image is-128x128">
             <img src="${movieImage}"><br>
@@ -53,7 +53,7 @@ const populateValues=()=>
           </div>
         </article>
       <div class="moreInfo">
-      <a><i><strong>More Info...</strong></i></a>
+      <a onclick="displayModal()"><i><strong>More Info...</strong></i></a>
       </div>
       </div>`
      }  
@@ -61,7 +61,7 @@ const populateValues=()=>
 }
 
 movieLists.addEventListener(`click`, (event) => {
-  let selectedMovie = event.target.closest(`.media`);
+  let selectedMovie = event.target.closest(`.column-style`);
   if (!selectedMovie) return;
   let selectedMovieId= selectedMovie.id;
 // getselectedMoviesAsHTML(selectedMovieId);
@@ -81,7 +81,7 @@ const displayModal = (receivedMovieId) =>
   let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
   movieLists.innerHTML += `<div class="modal is-active">
   <div class="modal-background"><img src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
-  <div class="modal-card  is-transparent">
+  <div class="modal-card modal-style">
   <header class="modal-card-head">
   <strong>${obj.title}</strong>
 </header>
