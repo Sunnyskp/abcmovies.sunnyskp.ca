@@ -14,9 +14,20 @@ a.navbar-link {
 div.columns.header-style {
 	background-color: #1a4b53;
 }
-div.column{
-	padding-bottom: 0;
+
+.media{
+	margin-bottom: 8px;
 }
+
+.moreInfo{
+	margin-top: 0.5em;
+	padding: 0.25em 0.5em;
+	border: 0.25px;
+	border-style: solid;
+	border-color:#052b3a23;
+	box-shadow: 1px 2px 14px #052b3a23;	
+}
+
 .hero-bg {
 	background-image: url(../img/hero-bg.png);
 }
@@ -31,11 +42,11 @@ a.navbar-burger {
 	margin-bottom: 1em;
 }
 
-.div-para-style, #navbarBasicExample{
-	padding-right:0.5em;
+div.content{
+	height: 12em;
 }
 
-.fb-post-figure-style {
+/* .fb-post-figure-style {
 	align-items: left;
 	padding-right: 2em;
 	text-align: justify;
@@ -46,17 +57,15 @@ a.navbar-burger {
 .fb-post-image-style {
 	width: 150px;
 	height: 260px;
-}
+} */
  
 
 .column-style {
 	margin: 0.5em;
-	padding: auto 0.5em;
 	border: 0.25px;
 	border-style: solid;
 	border-color:#052b3a23;
 	box-shadow: 1px 2px 14px #052b3a23;
-	height:15em;
 	min-width: 25em;
 	overflow-y: auto;
 }

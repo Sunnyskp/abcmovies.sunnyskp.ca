@@ -20,6 +20,8 @@ const endPoint=`https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e
  xhr.addEventListener("readystatechange",populateValues)   
 };
 
+window.onload = displayPosts;
+
 
 
 const populateValues=()=>
@@ -33,8 +35,8 @@ const populateValues=()=>
       let dateString = new Date(jasonData.results[index].release_date);
       let dateValue = dateString.toDateString();
         let movieImage = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`
-        movieLists.innerHTML += `<div class="column-style column is-vcentered is-mobile is-tablet is-desktop is-widescreen is-fullhd">
-        <article class="media" data-moveId=${movieId}>
+        movieLists.innerHTML += `<div class="column-style column is-mobile is-tablet is-desktop is-widescreen is-fullhd">
+        <article class="media" Id=${movieId}>
           <figure class="media-left">
             <p class="image is-128x128">
             <img src="${movieImage}"><br>
@@ -47,7 +49,23 @@ const populateValues=()=>
             </div>
           </div>
         </article>
+      <div class="moreInfo">
+      <a><i><strong>More Info...</strong></i></a>
+      </div>
       </div>`
      }  
     }
 }
+populateValues();
+
+movieLists.addEventListener(`click`, (event) => {
+  let selectedMovie = event.target.closest(`.media`);
+  if (!selectedMovie) return;
+  let selectedMovieId= selectedMovie.id;
+getselectedMoviesAsHTML(selectedMovieId); 
+});
+const getselectedMoviesAsHTML = (receivedMovieId) => {
+  console.log(receivedMovieId);
+     }  
+
+
