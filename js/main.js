@@ -65,15 +65,15 @@ movieLists.addEventListener(`click`, (event) => {
   if (!selectedMovie) return;
   let selectedMovieId= selectedMovie.id;
 displayModal(selectedMovieId);
-// getselectedMoviesAsHTML(selectedMovieId);
+getselectedMoviesAsHTML(selectedMovieId);
 });
 
-// const getselectedMoviesAsHTML = (receivedMovieId) => {
-//   const movieEndPoint=`https://api.themoviedb.org/3/movie/${receivedMovieId}/videos?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`
-//   xhr2.open("GET",movieEndPoint);
-//   xhr2.send();
-//   xhr2.addEventListener("readystatechange",displayTrailer)  
-//      }; 
+const getselectedMoviesAsHTML = (receivedMovieId) => {
+  const movieEndPoint=`https://api.themoviedb.org/3/movie/${receivedMovieId}/videos?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`
+  xhr2.open("GET",movieEndPoint);
+  xhr2.send();
+  xhr2.addEventListener("readystatechange",displayModal)  
+     }; 
 
 const displayModal = (receivedMovieId) =>
 {
@@ -96,6 +96,7 @@ const displayModal = (receivedMovieId) =>
       <div class="content">
     <small><i>Release Date:</i> <strong>${obj.release_date}</strong><br><i>Movie Rating:</i> <strong>${obj.vote_average}/10</strong></small>
           <div align="justify" class="div-para-style">${obj.overview}</div>
+       <!-- <div><iframe width="560" height="315" src="https://www.youtube.com/embed/mpOGT3GTO84" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
       </div>
     </div>
   </article>

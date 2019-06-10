@@ -20,7 +20,7 @@ a.navbar-link {
 	color: #052b3a23;
 }
 div.columns.header-style {
-	background-color: #1a4b53;
+	background-color: #4f3d5a;
 }
 
 .media{
@@ -68,7 +68,7 @@ div.content{
 } */
  
 .modal-style{
-	opacity: 0.865;
+	opacity: 0.875;
 }
 
 .column-style {
@@ -82,7 +82,7 @@ div.content{
 }
 
 .logo-style{
-	width: 20em;
+	width: 25em;
 	position: relative;
 	top: 50%;
 	left: 50%;
