@@ -2,13 +2,15 @@
 //creates event Listener
 const eleClickMe= document.querySelector("#clickMe");
 const movieLists= document.querySelector("#movieLists");
+const pageList1= document.querySelector("#pageList1");
+const pageList2= document.querySelector("#pageList2");
 //To be able to send HTTP request to an external server. You must create the below object
 const xhr = new XMLHttpRequest();
 const xhr2 = new XMLHttpRequest();
 const displayPosts = () =>
 {
 
-const endPoint=`https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`
+const endPoint1=`https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`;
 
 
     // /*
@@ -16,7 +18,7 @@ const endPoint=`https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e
 
     //     2nd Argument is the end of the API that you want to access
     // */
- xhr.open("GET",endPoint);
+ xhr.open("GET",endPoint1);
  xhr.send();
  xhr.addEventListener("readystatechange",populateValues,displayModal)   
 };
@@ -57,6 +59,13 @@ const populateValues=()=>
       </div>
       </div>`
      }  
+
+     for (let pg = 1; pg <= jasonData.total_pages; pg++) {
+      pageList1.innerHTML += `<li><a id=${pg} class="pagination-link" aria-label="Page ${pg}" aria-current="page">${pg}</a></li>`;
+     }
+     for (let pg =1; pg <= jasonData.total_pages; pg++) {
+      pageList2.innerHTML += `<li><a id=${pg} class="pagination-link" aria-label="Page ${pg}" aria-current="page">${pg}</a></li>`;
+     }
     }
 }
 

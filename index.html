@@ -19,17 +19,8 @@
   </div>
   <!-- HEADER NAVIGATION BAR -->
   <div  class="columns-style">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-      <a class="pagination-previous">Previous Page</a>
-      <a class="pagination-next">Next page</a>
-      <ul class="pagination-list">
-        <li><a onclick="changePage(event)" value="1" class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a></li>
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        <li><a onclick="changePage(event)" value="25" class="pagination-link" aria-label="Goto page 25">25</a></li>
-        <li><a onclick="changePage(event)" class="pagination-link" aria-label="Goto page 26" aria-current="page">26</a></li>
-        <li><a onclick="changePage(event)" class="pagination-link" aria-label="Goto page 27">27</a></li>
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        <li><a onclick="changePage(event)" class="pagination-link" aria-label="Goto page 49">49</a></li>
+    <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
+      <ul class="pagination-list" id="pageList1">
       </ul>
     </nav>
   </div>
@@ -49,18 +40,9 @@
         </div>
   </div>
   <div  class="columns-style">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-      <a class="pagination-previous">Previous Page</a>
-      <a class="pagination-next">Next page</a>
-      <ul class="pagination-list">
-        <li><a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a></li>
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        <li><a class="pagination-link" aria-label="Goto page 25">25</a></li>
-        <li><a class="pagination-link " aria-label="Goto page 26" >26</a></li>
-        <li><a class="pagination-link" aria-label="Goto page 27">27</a></li>
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        <li><a class="pagination-link" aria-label="Goto page 49">49</a></li>
-      </ul>
+    <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
+        <ul class="pagination-list" id="pageList2">
+        </ul>
     </nav>
   </div>
   <!-- HIGHER LEVEL TWO COLUMN GRID END -->
