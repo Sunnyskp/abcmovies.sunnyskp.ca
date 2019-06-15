@@ -54,20 +54,20 @@ div.content{
 	height: 12em;
 }
 
-div.iframe{
-	height: 52em;
-	width: 60em;
+.modal-card-style{
+	height: 42em;
+	min-width: 60em;
 }
+
+.trailerFrame{
+height: 22em;
+width:100%;
+opacity: 1;
+}
+
 
  
-.modal-style{
-	opacity: 0.855;
-	
-}
 
-.modal-card-body{
-	height: 32em;
-}
 
 .column-style {
 	margin: 0.5em;

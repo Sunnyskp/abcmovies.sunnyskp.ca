@@ -86,14 +86,14 @@ const getselectedMoviesAsHTML = (receivedMovieId) => {
 
 const displayModal = (receivedMovieId) =>
 {
-  if(xhr2.readyState==4)
+  if(xhr2.readyState==4 && xhr2.readyState==4)
     {
   const jasonData=JSON.parse(xhr.responseText);
   const jasonData2=JSON.parse(xhr2.responseText);
   let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
   movieLists.innerHTML += `<div class="modal is-active">
   <div class="modal-background"><img class="modalBgImage" src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
-  <div class="modal-card modal-style">
+  <div class="modal-card modal-card-style">
   <header class="modal-card-head">
   <strong>${obj.title}</strong>
 </header>
@@ -113,7 +113,7 @@ const displayModal = (receivedMovieId) =>
   </article>
   <div>
   <div>
-  <iframe  class="trailerFrame" width="600px" height="520px" src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="1" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
+  <div class="trailerBg"><iframe  class="trailerFrame" width="600px" height="520px" src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe></div>
   </div></section>
     <footer class="modal-card-foot">
       <button onclick="location.href = '../index.html';" class="button is-link">Go Back to Home Page</button>
