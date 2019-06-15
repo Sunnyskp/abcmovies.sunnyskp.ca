@@ -86,7 +86,10 @@ const getselectedMoviesAsHTML = (receivedMovieId) => {
 
 const displayModal = (receivedMovieId) =>
 {
+  if(xhr2.readyState==4)
+    {
   const jasonData=JSON.parse(xhr.responseText);
+  const jasonData2=JSON.parse(xhr2.responseText);
   let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
   movieLists.innerHTML += `<div class="modal is-active">
   <div class="modal-background"><img class="modalBgImage" src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
@@ -104,17 +107,20 @@ const displayModal = (receivedMovieId) =>
     <div  class="media-content">
       <div class="content">
     <small><i>Release Date:</i> <strong>${obj.release_date}</strong><br><i>Movie Rating:</i> <strong>${obj.vote_average}/10</strong></small>
-          <div align="justify" class="div-para-style">${obj.overview}</div>
-       <!-- <div><iframe width="560" height="315" src="https://www.youtube.com/embed/mpOGT3GTO84" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
-      </div>
+          <div align="justify" class="div-para-style"><strong>${obj.overview}</strong></div>
+       </div>
     </div>
   </article>
-    </section>
+  <div>
+  <div>
+  <iframe  class="trailerFrame" width="600px" height="520px" src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="1" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
+  </div></section>
     <footer class="modal-card-foot">
       <button onclick="location.href = '../index.html';" class="button is-link">Go Back to Home Page</button>
     </footer>
   </div>
 </div>`;  
+}
 }
 
 

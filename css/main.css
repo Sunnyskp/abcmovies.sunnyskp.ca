@@ -13,7 +13,7 @@ a.navbar-item {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 80%;
+	width: 100%;
 }
 
 a.navbar-link {
@@ -54,21 +54,19 @@ div.content{
 	height: 12em;
 }
 
-/* .fb-post-figure-style {
-	align-items: left;
-	padding-right: 2em;
-	text-align: justify;
-	min-width: 150px;
-	height: 260px;
+div.iframe{
+	height: 52em;
+	width: 60em;
 }
 
-.fb-post-image-style {
-	width: 150px;
-	height: 260px;
-} */
  
 .modal-style{
-	opacity: 0.875;
+	opacity: 0.855;
+	
+}
+
+.modal-card-body{
+	height: 32em;
 }
 
 .column-style {
