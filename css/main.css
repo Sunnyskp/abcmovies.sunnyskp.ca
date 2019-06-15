@@ -56,19 +56,15 @@ div.content{
 
 .modal-card-style{
 	opacity: 0.95;
-	height: 42em;
-	min-width: 60em;
+	max-height: 42em;
+	max-width: 60em;
 }
 
 .trailerFrame{
-height: 22em;
+max-height: 22em;
 width:100%;
 opacity: 1;
 }
-
-
- 
-
 
 .column-style {
 	margin: 0.5em;
@@ -102,7 +98,7 @@ opacity: 1;
 
 }
 
-@media screen and (min-width:769px) {
+@media screen and (maxs-width:70em) {
 	.menu-list-style {
 		border: 0.25px;
 		border-style: solid;
@@ -111,4 +107,17 @@ opacity: 1;
 		box-shadow: 1px 2px 4px#ffffff;
 		margin: 0.5em;
 	}
+
+	.modal-card-style{
+		opacity: 0.95;
+		height: 42em;
+		width: 60em;
+	}
+	
+	.trailerFrame{
+	height: 22em;
+	width:100%;
+	opacity: 1;
+	}
+
 }
