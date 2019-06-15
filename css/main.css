@@ -55,6 +55,7 @@ div.content{
 }
 
 .modal-card-style{
+	opacity: 0.95;
 	height: 42em;
 	min-width: 60em;
 }
