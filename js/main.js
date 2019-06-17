@@ -108,7 +108,7 @@ const getSelectedMoviesAsHTML = (receivedMovieId) => {
   const movieEndPoint=`https://api.themoviedb.org/3/movie/${receivedMovieId}/videos?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`;
   xhr2.open("GET",movieEndPoint);
   xhr2.send();
-  xhr2.addEventListener("readystatechange",displayModal)  
+  xhr2.addEventListener("readystatechange",event=> {displayModal(receivedMovieId)} )  
      }; 
 
 const displayModal = (receivedMovieId) =>
