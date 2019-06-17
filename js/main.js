@@ -134,34 +134,28 @@ const displayModal = (receivedMovieId) =>
   }
 
   if (jasonData2.results[0] != undefined){
-  movieLists.innerHTML += `<div class="modal is-active">
-  <div class="modal-background"><img class="modalBgImage" src="${bgPoster}"></div>
-  <div class="modal-card modal-card-style">
+  movieLists.innerHTML += `<div class="modal is-active modal-card-style">
+  <div class="modal-background">
+    <img class="modalBgImage" src="${bgPoster}">
+  </div>
+<div class="modal-card ">
   <header class="modal-card-head">
   <strong>${obj.title}</strong>
-</header>
-    <section class="modal-card-body">
-    <article class="media" Id=${receivedMovieId}>
-    <figure class="media-left">
-      <p class="image is-128x128">
-      <img src="${moviePoster}">
-      </p>
-    </figure>
-    <div  class="media-content">
-      <div class="content">
-    <small><i>Release Date:</i> <strong>${obj.release_date}</strong><br><i>Movie Rating:</i> <strong>${obj.vote_average}/10</strong></small>
-          <div align="justify" class="div-para-style"><strong>${obj.overview}</strong></div>
-       </div>
-    </div>
-  </article>
-  <div>
-  <div>
-  <iframe  class="trailerFrame" width="600px" height="520px" src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
-  </div></section>
-    <footer class="modal-card-foot">
-      <button onclick="location.href = '../index.html';" class="button is-link">Go Back to Home Page</button>
-    </footer>
-  </div>
+  </header>
+  <section class="modal-card-body">
+      <article class="media" Id=${receivedMovieId}>
+           <figure class="media-left"><p class="image is-128x128"><img src="${moviePoster}"></p></figure>
+           <div  class="media-content">
+               <div class="content">
+              <small><i>Release Date:</i> <strong>${obj.release_date}</strong><br><i>Movie Rating:</i> <strong>${obj.vote_average}/10</strong></small>
+              <div align="justify" class="div-para-style"><strong>${obj.overview}</strong></div>
+          </div>
+       </article>
+           <div><iframe  class="trailerFrame" width="600px" height="520px" src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe></div></section>
+       <footer class="modal-card-foot">
+          <button onclick="location.href = '../index.html';" class="button is-link">Go Back to Home Page</button>
+       </footer>
+</div>
 </div>`;  
   }
   else {
@@ -184,7 +178,7 @@ const displayModal = (receivedMovieId) =>
           <div align="justify" class="div-para-style"><strong>${obj.overview}</strong></div>
        </div>
     </div>
-  </article>
+  </article><br><br><br>
   <p>
   <i><strong>NO MOVIE TRAILER AVAILABLE TO DISPLAY...</strong></i>
   </p>

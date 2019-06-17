@@ -55,16 +55,16 @@ div.content{
 }
 
 .modal-card-style{
-	opacity: 0.95;
-	max-height: 42em;
-	max-width: 60em;
+	opacity: 0.92;
+	min-height: 40em;
+	min-width: 60em;
 }
 
 .trailerFrame{
-max-height: 22em;
+min-height: 22em;
 width:100%;
-opacity: 1;
 }
+
 
 .column-style {
 	margin: 0.5em;
@@ -87,37 +87,21 @@ opacity: 1;
 
 @media screen and (max-width:768px) {
 
-	.menu {
-		display: none;
-	}
-
 	.button-style {
 		margin: 0.5rem 0;
 		width: 100%;
 	}
 
-}
-
-@media screen and (maxs-width:70em) {
-	.menu-list-style {
-		border: 0.25px;
-		border-style: solid;
-		border-color:#ffffff;
-		border-radius: 8px;
-		box-shadow: 1px 2px 4px#ffffff;
-		margin: 0.5em;
-	}
-
 	.modal-card-style{
-		opacity: 0.95;
-		height: 42em;
-		width: 60em;
+		opacity: 0.92;
+		max-height: 40em;
+		max-width: 20em;
 	}
 	
 	.trailerFrame{
-	height: 22em;
-	width:100%;
-	opacity: 1;
+	max-height: 22em;
+	width:60%;
 	}
+	
 
 }
