@@ -25,7 +25,8 @@ const endPoint=`https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e
 
 window.onload = displayPosts;
 
-
+let moviePoster = ``;
+let bgPoster =``;
 
 
 const populateValues=()=>
@@ -35,18 +36,23 @@ const populateValues=()=>
       movieLists.innerHTML=``;
       const jasonData=JSON.parse(xhr.responseText);
      for (let index = 0; index < jasonData.results.length; index++) {
-      if (jasonData.results[index].poster_path != null){
+      if (jasonData.results[index] != null){
+        if(jasonData.results[index].poster_path != null){
+          moviePoster = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`;
+        }
+        else{
+          moviePoster=`../img/noPoster.jpg`;
+        }
       let movieId=jasonData.results[index].id;
       let movieDescription = jasonData.results[index].overview;
       let movieDescriptionSubstring= movieDescription.substring(0, 135);
       let dateString = new Date(jasonData.results[index].release_date);
       let dateValue = dateString.toDateString();
-        let movieImage = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`;
          movieLists.innerHTML += `<div Id=${movieId} class="column-style column is-mobile is-tablet is-desktop is-widescreen is-fullhd">
         <article class="media">
           <figure class="media-left">
             <p class="image is-128x128">
-            <img src="${movieImage}"><br>
+            <img src="${moviePoster}"><br>
             </p>
           </figure>
           <div  class="media-content">
@@ -112,9 +118,24 @@ const displayModal = (receivedMovieId) =>
   const jasonData=JSON.parse(xhr.responseText);
   const jasonData2=JSON.parse(xhr2.responseText);
   let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
+
+  if(obj.backdrop_path != null){
+    bgPoster = `https://image.tmdb.org/t/p/original/${obj.backdrop_path}`;
+  }
+  else{
+    bgPoster=`../img/defaultBg.jpeg`;
+  }
+
+  if(obj.poster_path != null){
+    moviePoster = `https://image.tmdb.org/t/p/original/${obj.poster_path}`;
+  }
+  else{
+    moviePoster=`../img/noPoster.jpg`;
+  }
+
   if (jasonData2.results[0] != undefined){
   movieLists.innerHTML += `<div class="modal is-active">
-  <div class="modal-background"><img class="modalBgImage" src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
+  <div class="modal-background"><img class="modalBgImage" src="${bgPoster}"></div>
   <div class="modal-card modal-card-style">
   <header class="modal-card-head">
   <strong>${obj.title}</strong>
@@ -123,7 +144,7 @@ const displayModal = (receivedMovieId) =>
     <article class="media" Id=${receivedMovieId}>
     <figure class="media-left">
       <p class="image is-128x128">
-      <img src="https://image.tmdb.org/t/p/original/${obj.poster_path}"><br>
+      <img src="${moviePoster}">
       </p>
     </figure>
     <div  class="media-content">
@@ -145,7 +166,7 @@ const displayModal = (receivedMovieId) =>
   }
   else {
     movieLists.innerHTML += `<div class="modal is-active">
-  <div class="modal-background"><img class="modalBgImage" src="https://image.tmdb.org/t/p/original/${obj.backdrop_path}"></div>
+  <div class="modal-background"><img class="modalBgImage" src="${bgPoster}"></div>
   <div class="modal-card modal-card-style">
   <header class="modal-card-head">
   <strong>${obj.title}</strong>
@@ -154,7 +175,7 @@ const displayModal = (receivedMovieId) =>
     <article class="media" Id=${receivedMovieId}>
     <figure class="media-left">
       <p class="image is-128x128">
-      <img src="https://image.tmdb.org/t/p/original/${obj.poster_path}"><br>
+      <img src="${moviePoster}"><br>
       </p>
     </figure>
     <div  class="media-content">
@@ -165,7 +186,7 @@ const displayModal = (receivedMovieId) =>
     </div>
   </article>
   <p>
-  NO MOVIE TRAILER AVAILABLE TO DISPLAY...
+  <i><strong>NO MOVIE TRAILER AVAILABLE TO DISPLAY...</strong></i>
   </p>
   </section>
     <footer class="modal-card-foot">
