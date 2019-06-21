@@ -48,7 +48,7 @@ const populateValues=()=>
       let movieDescriptionSubstring= movieDescription.substring(0, 135);
       let dateString = new Date(jasonData.results[index].release_date);
       let dateValue = dateString.toDateString();
-         movieLists.innerHTML += `<div Id=${movieId} class="column-style column is-mobile is-tablet is-desktop is-widescreen is-fullhd">
+         movieLists.innerHTML += `<div Id=${movieId} class="column-style column is-small-mobile is-mobile is-tablet is-desktop is-widescreen is-fullhd">
         <article class="media">
           <figure class="media-left">
             <p class="image is-128x128">
@@ -139,12 +139,12 @@ const displayModal = (receivedMovieId) =>
     <img class="modalBgImage" src="${bgPoster}">
   </div>
   <div class="modal-card  modal-card-style">
-    <header class="modal-card-head">
+    <header class="modal-card-head modal-opacity">
       <strong>${obj.title}</strong>
     </header>
-    <section class="modal-card-body">
+    <section class="modal-card-body modal-opacity">
     <div>
-      <article class="media" Id=${receivedMovieId}>
+      <article class="media modal-opacity" Id=${receivedMovieId}>
         <figure class="media-left">
           <p class="image is-128x128"><img src="${moviePoster}"></p>
         </figure>
@@ -162,7 +162,7 @@ const displayModal = (receivedMovieId) =>
     </section>
     <footer>
       <iframe class="trailerFrame" width="600px" height="520px"
-        src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0"
+        src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" opacity="1"
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
      <div><button onclick="location.href = '../index.html';" class="trailerButton button is-link">Go Back to Home Page</button></div>
