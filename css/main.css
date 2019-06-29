@@ -57,6 +57,10 @@ opacity: 0.9;
 	font-size: 0.90em;
 }
 
+section.modal-card-body{
+	min-height: 16em;
+}
+
 .column-style {
 	margin: 0.5em;
 	border: 0.25px;
