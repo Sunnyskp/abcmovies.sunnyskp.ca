@@ -52,7 +52,7 @@ const populateValues=()=>
         <article class="media">
           <figure class="media-left">
             <p class="image is-128x128">
-            <img src="${moviePoster}"><br>
+            <img class="movieIcon" src="${moviePoster}"><br>
             </p>
           </figure>
           <div  class="media-content">
@@ -140,12 +140,15 @@ const displayModal = (receivedMovieId) =>
   </div>
   <div class="modal-card  modal-card-style">
     <header class="modal-card-head modal-opacity">
+    <figure class="mobileMovieIcon media-left">
+          <p class="image  is-32x32"><img class="is-rounded" src="${moviePoster}"></p>
+        </figure>
       <strong>${obj.title}</strong>
     </header>
     <section class="modal-card-body modal-opacity">
     <div>
       <article class="media modal-opacity" Id=${receivedMovieId}>
-        <figure class="media-left">
+        <figure class=" movieIcon media-left">
           <p class="image is-128x128"><img src="${moviePoster}"></p>
         </figure>
         <div class="media-content">
@@ -161,7 +164,7 @@ const displayModal = (receivedMovieId) =>
     </div>
     </section>
     <footer>
-      <iframe class="trailerFrame" width="600px" height="520px"
+      <iframe  class="trailerFrame" width="600px" height="520px"
         src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" opacity="1"
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
@@ -179,9 +182,9 @@ const displayModal = (receivedMovieId) =>
 </header>
     <section class="modal-card-body">
     <article class="media" Id=${receivedMovieId}>
-    <figure class="media-left">
+    <figure class="movieIcon media-left">
       <p class="image is-128x128">
-      <img src="${moviePoster}"><br>
+      <img  src="${moviePoster}"><br>
       </p>
     </figure>
     <div  class="media-content">

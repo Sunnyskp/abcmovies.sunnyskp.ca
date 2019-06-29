@@ -48,6 +48,15 @@ opacity: 0.9;
 	
 }
 
+.mobileMovieIcon{
+	display:none;
+}
+
+.modal-card-style {
+	max-width: 98%;
+	font-size: 0.90em;
+}
+
 .column-style {
 	margin: 0.5em;
 	border: 0.25px;
@@ -72,40 +81,50 @@ opacity: 0.9;
 
 }
 
-/* @media screen and (max-width:768px) {
+@media screen and (max-width:450px) {
 
 	.button-style {
 		margin: 0.5rem 0;
 		width: 100%;
 	}
 
-	.modal-card-style {
-		opacity: 0.92;
-		max-height: 40em;
-		width: 80%;
+	.column-style {
+		max-width: 98%;
+		font-size: 0.75em;
 	}
 
-	.trailerFrame {
-		max-height: 12em;
-		width: 100%;
+	nav{
+		max-width: 98%;
 	}
 
+	.logo-style {
+		width: 96%;
+	}
+	
+	.movieIcon{
+		max-width: 90%;
+		max-height: 115%;
+	}	
 
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:768px) {
 
 
 	.modal-card-style {
-		opacity: 0.92;
-		max-height: 40em;
-		width: 80%;
+		max-width: 98%;
+		font-size: 0.75em;
+	}
+	.movieIcon{
+		display:none;
 	}
 
-	.trailerFrame {
-		max-height: 8em;
-		width: 100%;
+	.mobileMovieIcon{
+		display:inline-block;
 	}
 
+	header{
+		vertical-align: middle;
+	}
 
-} */
+} 
