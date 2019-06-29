@@ -123,6 +123,10 @@ section.modal-card-body{
 		display:none;
 	}
 
+	.modalBgImage{
+		display: none;
+	}
+
 	.mobileMovieIcon{
 		display:inline-block;
 	}
