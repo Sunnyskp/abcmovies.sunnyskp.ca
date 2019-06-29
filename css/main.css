@@ -43,9 +43,18 @@ opacity: 0.9;
 }
 
 .trailerFrame {
-	min-height: 22em;
-	width: 100%;
-	
+	min-height: 25em;
+	width: 75%;
+}
+
+.modalFooterStyle{
+width:100%;
+text-align: center;
+background-color: rgb(5, 5, 5);
+border: 1em;
+border-bottom-right-radius: 1em;
+border-bottom-left-radius: 1em;
+
 }
 
 .mobileMovieIcon{
@@ -74,6 +83,8 @@ section.modal-card-body{
 .trailerButton {
 	margin-top: 0;
 	width: 100%;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .logo-style {
@@ -113,6 +124,16 @@ section.modal-card-body{
 }
 
 @media screen and (max-width:768px) {
+
+	html {
+		transform: rotate(-90deg);
+		transform-origin: left top;
+		width: 100vh;
+		overflow-x: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	  }
 
 
 	.modal-card-style {

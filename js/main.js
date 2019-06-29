@@ -163,8 +163,8 @@ const displayModal = (receivedMovieId) =>
       </article>
     </div>
     </section>
-    <footer>
-      <iframe  class="trailerFrame" width="600px" height="520px"
+    <footer class="modalFooterStyle">
+      <iframe  class="trailerFrame" 
         src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" opacity="1"
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
