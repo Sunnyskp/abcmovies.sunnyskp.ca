@@ -146,4 +146,8 @@ section.modal-card-body{
 		vertical-align: middle;
 	}
 
+	section.modal-card-body{
+		min-height: 14em;
+	}
+
 } 
