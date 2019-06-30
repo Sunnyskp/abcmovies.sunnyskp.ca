@@ -44,7 +44,7 @@ opacity: 0.9;
 
 .trailerFrame {
 	min-height: 25em;
-	width: 95%;
+	width: 87.5%;
 }
 
 .modalFooterStyle{
@@ -67,7 +67,7 @@ border-bottom-left-radius: 1em;
 }
 
 section.modal-card-body{
-	min-height: 15em;
+	min-height: 14.5em;
 }
 
 .column-style {

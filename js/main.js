@@ -165,7 +165,7 @@ const displayModal = (receivedMovieId) =>
     </section>
     <footer class="modalFooterStyle">
       <iframe  class="trailerFrame" 
-        src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="0" opacity="1"
+        src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="1" opacity="1"
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
      <div><button onclick="location.href = '../index.html';" class="trailerButton button is-link">Go Back to Home Page</button></div>
