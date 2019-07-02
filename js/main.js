@@ -1,54 +1,49 @@
-
 //creates event Listener
-const eleClickMe= document.querySelector("#clickMe");
-const movieLists= document.querySelector("#movieLists");
-const pageList1= document.querySelector("#pageList1");
-const pageList2= document.querySelector("#pageList2");
+const eleClickMe = document.querySelector("#clickMe");
+const movieLists = document.querySelector("#movieLists");
+const pageList1 = document.querySelector("#pageList1");
+const pageList2 = document.querySelector("#pageList2");
 //To be able to send HTTP request to an external server. You must create the below object
 const xhr = new XMLHttpRequest();
 const xhr2 = new XMLHttpRequest();
-const displayPosts = (pg=1) =>
-{
+const displayPosts = (pg = 1) => {
 
-const endPoint=`https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US&page=${pg}`;
+  const endPoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US&page=${pg}`;
 
 
-    // /*
-    //     1st argument is the HTTP method (which can be GET, POST,PUT oR DELETE)
+  // /*
+  //     1st argument is the HTTP method (which can be GET, POST,PUT oR DELETE)
 
-    //     2nd Argument is the end of the API that you want to access
-    // */
- xhr.open("GET",endPoint);
- xhr.send();
- xhr.addEventListener("readystatechange",populateValues,displayModal)   
+  //     2nd Argument is the end of the API that you want to access
+  // */
+  xhr.open("GET", endPoint);
+  xhr.send();
+  xhr.addEventListener("readystatechange", populateValues, displayModal)
 };
 
 window.onload = displayPosts;
 
 let moviePoster = ``;
-let bgPoster =``;
+let bgPoster = ``;
 
 
-const populateValues=()=>
-{
-    if(xhr.readyState==4)
-    {
-      movieLists.innerHTML=``;
-      const jasonData=JSON.parse(xhr.responseText);
-     for (let index = 0; index < jasonData.results.length; index++) {
-      if (jasonData.results[index] != null){
-        if(jasonData.results[index].poster_path != null){
+const populateValues = () => {
+  if (xhr.readyState == 4) {
+    movieLists.innerHTML = ``;
+    const jasonData = JSON.parse(xhr.responseText);
+    for (let index = 0; index < jasonData.results.length; index++) {
+      if (jasonData.results[index] != null) {
+        if (jasonData.results[index].poster_path != null) {
           moviePoster = `https://image.tmdb.org/t/p/original/${jasonData.results[index].poster_path}`;
+        } else {
+          moviePoster = `../img/noPoster.jpg`;
         }
-        else{
-          moviePoster=`../img/noPoster.jpg`;
-        }
-      let movieId=jasonData.results[index].id;
-      let movieDescription = jasonData.results[index].overview;
-      let movieDescriptionSubstring= movieDescription.substring(0, 135);
-      let dateString = new Date(jasonData.results[index].release_date);
-      let dateValue = dateString.toDateString();
-         movieLists.innerHTML += `<div Id=${movieId} class="column-style column is-small-mobile is-mobile is-tablet is-desktop is-widescreen is-fullhd">
+        let movieId = jasonData.results[index].id;
+        let movieDescription = jasonData.results[index].overview;
+        let movieDescriptionSubstring = movieDescription.substring(0, 135);
+        let dateString = new Date(jasonData.results[index].release_date);
+        let dateValue = dateString.toDateString();
+        movieLists.innerHTML += `<div Id=${movieId} class="column-style column is-small-mobile is-mobile is-tablet is-desktop is-widescreen is-fullhd">
         <article class="media">
           <figure class="media-left">
             <p class="image is-128x128">
@@ -66,32 +61,31 @@ const populateValues=()=>
       <a onclick="displayModal()"><i><strong>More Info...</strong></i></a>
       </div>
       </div>`
-     }  
-     else return;
+      } else return;
     }
-     pageList1.innerHTML=``;
-     for (let pg = 1; pg <= jasonData.total_pages; pg++) {
+    pageList1.innerHTML = ``;
+    for (let pg = 1; pg <= jasonData.total_pages; pg++) {
       pageList1.innerHTML += `<li id=${pg} ><a class="pagination-link" aria-label="Page ${pg}" aria-current="page">${pg}</a></li>`;
-     }
-     pageList2.innerHTML=``;
-     for (let pg =1; pg <= jasonData.total_pages; pg++) {
-      pageList2.innerHTML += `<li id=${pg} ><a class="pagination-link" aria-label="Page ${pg}" aria-current="page">${pg}</a></li>`;
-     }
     }
+    pageList2.innerHTML = ``;
+    for (let pg = 1; pg <= jasonData.total_pages; pg++) {
+      pageList2.innerHTML += `<li id=${pg} ><a class="pagination-link" aria-label="Page ${pg}" aria-current="page">${pg}</a></li>`;
+    }
+  }
 }
 
 movieLists.addEventListener(`click`, (event) => {
   let selectedMovie = event.target.closest(`.column-style`);
   if (!selectedMovie) return;
-  let selectedMovieId= selectedMovie.id;
-displayModal(selectedMovieId);
-getSelectedMoviesAsHTML(selectedMovieId);
+  let selectedMovieId = selectedMovie.id;
+  displayModal(selectedMovieId);
+  getSelectedMoviesAsHTML(selectedMovieId);
 });
 
 pageList1.addEventListener(`click`, (event) => {
   let selectedPage = event.target.closest(`li`);
   if (!selectedPage) return;
-  let selectedPageId= selectedPage.id;
+  let selectedPageId = selectedPage.id;
   console.log(selectedPageId);
   displayPosts(selectedPageId);
 });
@@ -99,42 +93,40 @@ pageList1.addEventListener(`click`, (event) => {
 pageList2.addEventListener(`click`, (event) => {
   let selectedPage = event.target.closest(`li`);
   if (!selectedPage) return;
-  let selectedPageId= selectedPage.id;
+  let selectedPageId = selectedPage.id;
   console.log(selectedPageId);
   displayPosts(selectedPageId);
 });
 
 const getSelectedMoviesAsHTML = (receivedMovieId) => {
-  const movieEndPoint=`https://api.themoviedb.org/3/movie/${receivedMovieId}/videos?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`;
-  xhr2.open("GET",movieEndPoint);
+  const movieEndPoint = `https://api.themoviedb.org/3/movie/${receivedMovieId}/videos?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`;
+  xhr2.open("GET", movieEndPoint);
   xhr2.send();
-  xhr2.addEventListener("readystatechange",event=> {displayModal(receivedMovieId)} )  
-     }; 
+  xhr2.addEventListener("readystatechange", event => {
+    displayModal(receivedMovieId)
+  })
+};
 
-const displayModal = (receivedMovieId) =>
-{
-  if(xhr2.readyState==4)
-    {
-  const jasonData=JSON.parse(xhr.responseText);
-  const jasonData2=JSON.parse(xhr2.responseText);
-  let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
+const displayModal = (receivedMovieId) => {
+  if (xhr2.readyState == 4) {
+    const jasonData = JSON.parse(xhr.responseText);
+    const jasonData2 = JSON.parse(xhr2.responseText);
+    let obj = jasonData.results.find(obj => obj.id == `${receivedMovieId}`);
 
-  if(obj.backdrop_path != null){
-    bgPoster = `https://image.tmdb.org/t/p/original/${obj.backdrop_path}`;
-  }
-  else{
-    bgPoster=`../img/defaultBg.jpeg`;
-  }
+    if (obj.backdrop_path != null) {
+      bgPoster = `https://image.tmdb.org/t/p/original/${obj.backdrop_path}`;
+    } else {
+      bgPoster = `../img/defaultBg.jpeg`;
+    }
 
-  if(obj.poster_path != null){
-    moviePoster = `https://image.tmdb.org/t/p/original/${obj.poster_path}`;
-  }
-  else{
-    moviePoster=`../img/noPoster.jpg`;
-  }
+    if (obj.poster_path != null) {
+      moviePoster = `https://image.tmdb.org/t/p/original/${obj.poster_path}`;
+    } else {
+      moviePoster = `../img/noPoster.jpg`;
+    }
 
-  if (jasonData2.results[0] != undefined){
-  movieLists.innerHTML += `<div class="modal is-active">
+    if (jasonData2.results[0] != undefined) {
+      movieLists.innerHTML += `<div class="modal is-active">
   <div class="modal-background">
     <img class="modalBgImage" src="${bgPoster}">
   </div>
@@ -145,8 +137,9 @@ const displayModal = (receivedMovieId) =>
         </figure>
       <strong>${obj.title}</strong>
     </header>
+    <button onclick="location.href = '../index.html';" class="button is-dark">Go Back to Home Page</button>
     <section class="modal-card-body modal-opacity">
-    <div>
+        <div>
       <article class="media modal-opacity" Id=${receivedMovieId}>
         <figure class=" movieIcon media-left">
           <p class="image is-128x128"><img src="${moviePoster}"></p>
@@ -168,13 +161,18 @@ const displayModal = (receivedMovieId) =>
         src="https://www.youtube.com/embed/${jasonData2.results[0].key}" frameborder="1" opacity="1"
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
-     <div><button onclick="location.href = '../index.html';" class="trailerButton button is-link">Go Back to Home Page</button></div>
+     <div>
+     <button  onclick="location.href = '../index.html';" class="trailerButton button is-light level">
+     <p class="level-left"><small><i>Popularity:</i><strong> ${obj.popularity}</strong></small></p>
+     <p class="level-left"><strong>ABC Movies</strong></i></p>
+     <p class="level-right"><small><i>Vote Count:</i><strong> ${obj.vote_count}</strong></small></p>
+     </button>
+     </div>
     </footer>
   </div>
-</div>`;  
-  }
-  else {
-    movieLists.innerHTML += `<div class="modal is-active">
+</div>`;
+    } else {
+      movieLists.innerHTML += `<div class="modal is-active">
   <div class="modal-background"><img class="modalBgImage" src="${bgPoster}"></div>
   <div class="modal-card modal-card-style">
   <header class="modal-card-head">
@@ -202,7 +200,7 @@ const displayModal = (receivedMovieId) =>
       <button onclick="location.href = '../index.html';" class="button is-link">Go Back to Home Page</button>
     </footer>
   </div>
-</div>`; 
+</div>`;
+    }
   }
-}
 }

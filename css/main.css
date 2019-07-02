@@ -23,6 +23,7 @@ div.columns.header-style {
 	border-color: #052b3a23;
 	box-shadow: 1px 2px 14px #052b3a23;
 }
+
 .columns-style {
 	margin-left: 1em;
 	margin-right: 1em;
@@ -38,27 +39,27 @@ div.content {
 
 }
 
-.modal-opacity{
-opacity: 0.9;
+.modal-opacity {
+	opacity: 0.9;
 }
 
 .trailerFrame {
 	min-height: 25em;
-	width: 87.5%;
+	width: 68%;
 }
 
-.modalFooterStyle{
-width:100%;
-text-align: center;
-background-color: rgb(5, 5, 5);
-border: 1em;
-border-bottom-right-radius: 1em;
-border-bottom-left-radius: 1em;
+.modalFooterStyle {
+	width: 100%;
+	text-align: center;
+	background-color: rgb(5, 5, 5);
+	border: 1em;
+	border-bottom-right-radius: 1em;
+	border-bottom-left-radius: 1em;
 
 }
 
-.mobileMovieIcon{
-	display:none;
+.mobileMovieIcon {
+	display: none;
 }
 
 .modal-card-style {
@@ -66,7 +67,7 @@ border-bottom-left-radius: 1em;
 	font-size: 0.90em;
 }
 
-section.modal-card-body{
+section.modal-card-body {
 	min-height: 14.5em;
 }
 
@@ -108,18 +109,18 @@ section.modal-card-body{
 		font-size: 0.75em;
 	}
 
-	nav{
+	nav {
 		max-width: 98%;
 	}
 
 	.logo-style {
 		width: 96%;
 	}
-	
-	.movieIcon{
+
+	.movieIcon {
 		max-width: 90%;
 		max-height: 115%;
-	}	
+	}
 
 }
 
@@ -130,24 +131,25 @@ section.modal-card-body{
 		max-width: 98%;
 		font-size: 0.75em;
 	}
-	.movieIcon{
-		display:none;
-	}
 
-	.modalBgImage{
+	.movieIcon {
 		display: none;
 	}
 
-	.mobileMovieIcon{
-		display:inline-block;
+	.modalBgImage {
+		display: none;
 	}
 
-	header{
+	.mobileMovieIcon {
+		display: inline-block;
+	}
+
+	header {
 		vertical-align: middle;
 	}
 
-	section.modal-card-body{
+	section.modal-card-body {
 		min-height: 14em;
 	}
 
-} 
+}
