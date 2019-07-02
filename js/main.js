@@ -197,7 +197,7 @@ const displayModal = (receivedMovieId) => {
   </p>
   </section>
     <footer class="modal-card-foot">
-      <button onclick="location.href = '../index.html';" class="button is-link">Go Back to Home Page</button>
+      <button onclick="location.href = '../index.html';" class="button trailerButton is-link">Go Back to Home Page</button>
     </footer>
   </div>
 </div>`;
