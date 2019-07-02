@@ -164,8 +164,9 @@ const displayModal = (receivedMovieId) => {
      <div>
      <button  onclick="location.href = '../index.html';" class="trailerButton button is-light level">
      <p class="level-left footerTag"><small><i>Popularity:</i><strong> ${obj.popularity}</strong></small></p>
-     <p class="level-left"><i><strong>&copy; 2019 ABC Movies</strong></i></p>
+     <p class="level-left footerTag"><i><strong>&copy; 2019 ABC Movies</strong></i></p>
      <p class="level-right footerTag"><small><i>Vote Count:</i><strong> ${obj.vote_count}</strong></small></p>
+     <a onclick="location.href = '../index.html';" class="footerURL trailerButton ">Go Back to Home Page</a>
      </button>
      </div>
     </footer>

@@ -97,6 +97,10 @@ section.modal-card-body {
 
 }
 
+.footerURL {
+	display: none;
+}
+
 @media screen and (max-width:450px) {
 
 	.button-style {
@@ -129,6 +133,10 @@ section.modal-card-body {
 
 	.footerTag {
 		display: none;
+	}
+
+	.footerURL {
+		display: inline-block;
 	}
 
 
