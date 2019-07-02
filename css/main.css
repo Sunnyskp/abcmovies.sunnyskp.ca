@@ -102,6 +102,7 @@ section.modal-card-body {
 	.button-style {
 		margin: 0.5rem 0;
 		width: 100%;
+		min-height: 2em;
 	}
 
 	.column-style {

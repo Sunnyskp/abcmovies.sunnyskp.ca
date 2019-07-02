@@ -137,7 +137,7 @@ const displayModal = (receivedMovieId) => {
         </figure>
       <strong>${obj.title}</strong>
     </header>
-    <button onclick="location.href = '../index.html';" class="button is-dark">Go Back to Home Page</button>
+    <button onclick="location.href = '../index.html';" class="trailerButton button is-dark">Go Back to Home Page</button>
     <section class="modal-card-body modal-opacity">
         <div>
       <article class="media modal-opacity" Id=${receivedMovieId}>
