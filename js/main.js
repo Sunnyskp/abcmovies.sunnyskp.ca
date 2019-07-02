@@ -163,9 +163,9 @@ const displayModal = (receivedMovieId) => {
       </iframe>
      <div>
      <button  onclick="location.href = '../index.html';" class="trailerButton button is-light level">
-     <p class="level-left"><small><i>Popularity:</i><strong> ${obj.popularity}</strong></small></p>
-     <p class="level-left"><strong>ABC Movies</strong></i></p>
-     <p class="level-right"><small><i>Vote Count:</i><strong> ${obj.vote_count}</strong></small></p>
+     <p class="level-left footerTag"><small><i>Popularity:</i><strong> ${obj.popularity}</strong></small></p>
+     <p class="level-left"><i><strong>&copy; 2019 ABC Movies</strong></i></p>
+     <p class="level-right footerTag"><small><i>Vote Count:</i><strong> ${obj.vote_count}</strong></small></p>
      </button>
      </div>
     </footer>

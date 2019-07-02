@@ -126,6 +126,10 @@ section.modal-card-body {
 
 @media screen and (max-width:768px) {
 
+	.footerTag {
+		display: none;
+	}
+
 
 	.modal-card-style {
 		max-width: 98%;
