@@ -137,12 +137,12 @@ const displayModal = (receivedMovieId) => {
         </figure>
       <strong>${obj.title}</strong>
     </header>
-    <button onclick="location.href = '../index.html';" class="trailerButton button is-dark">Go Back to Home Page</button>
+    <button onclick="location.href = '../index.html';" class="trailerButton button is-link">Go Back to Home Page</button>
     <section class="modal-card-body modal-opacity">
         <div>
       <article class="media modal-opacity" Id=${receivedMovieId}>
         <figure class=" movieIcon media-left">
-          <p class="image is-128x128"><img src="${moviePoster}"></p>
+          <p class="image is-96x96"><img src="${moviePoster}"></p>
         </figure>
         <div class="media-content">
           <div class="content">
@@ -162,11 +162,11 @@ const displayModal = (receivedMovieId) => {
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
      <div>
-     <button  onclick="location.href = '../index.html';" class="trailerButton button is-light level">
+     <button  onclick="location.href = '../index.html';" class="trailerButton button is-light is-outlined level">
      <p class="level-left footerTag"><small><i>Popularity:</i><strong> ${obj.popularity}</strong></small></p>
      <p class="level-left footerTag"><i><strong>&copy; 2019 ABC Movies</strong></i></p>
      <p class="level-right footerTag"><small><i>Vote Count:</i><strong> ${obj.vote_count}</strong></small></p>
-     <a onclick="location.href = '../index.html';" class="footerURL trailerButton ">Go Back to Home Page</a>
+     <a onclick="location.href = '../index.html';" class="footerURL trailerButton is-outlined">Go Back to Home Page</a>
      </button>
      </div>
     </footer>
