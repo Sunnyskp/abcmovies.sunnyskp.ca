@@ -100,6 +100,10 @@ section.modal-card-body {
     min-height: 2em;
   }
 
+  .headerButton {
+    display: none;
+  }
+
   .column-style {
     max-width: 100%;
     font-size: 0.75em;
