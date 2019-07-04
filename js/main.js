@@ -1,21 +1,17 @@
-//creates event Listener
-const eleClickMe = document.querySelector("#clickMe");
+//creates event Listener using below pointers.
+// const eleClickMe = document.querySelector("#clickMe");
 const movieLists = document.querySelector("#movieLists");
 const pageList1 = document.querySelector("#pageList1");
 const pageList2 = document.querySelector("#pageList2");
-//To be able to send HTTP request to an external server. You must create the below object
+
+//Constants to invoke HTTP requests to an external server
 const xhr = new XMLHttpRequest();
 const xhr2 = new XMLHttpRequest();
+
+//Displays Each Movie Posts
 const displayPosts = (pg = 1) => {
 
   const endPoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US&page=${pg}`;
-
-
-  // /*
-  //     1st argument is the HTTP method (which can be GET, POST,PUT oR DELETE)
-
-  //     2nd Argument is the end of the API that you want to access
-  // */
   xhr.open("GET", endPoint);
   xhr.send();
   xhr.addEventListener("readystatechange", populateValues, displayModal)
@@ -26,7 +22,7 @@ window.onload = displayPosts;
 let moviePoster = ``;
 let bgPoster = ``;
 
-
+//Populates Each Posted movie's values
 const populateValues = () => {
   if (xhr.readyState == 4) {
     movieLists.innerHTML = ``;
@@ -74,6 +70,7 @@ const populateValues = () => {
   }
 }
 
+//Event Listener to invoke modal view of each movie
 movieLists.addEventListener(`click`, (event) => {
   let selectedMovie = event.target.closest(`.column-style`);
   if (!selectedMovie) return;
@@ -82,6 +79,7 @@ movieLists.addEventListener(`click`, (event) => {
   getSelectedMoviesAsHTML(selectedMovieId);
 });
 
+//Event Listener for pagination on the top of the homepage
 pageList1.addEventListener(`click`, (event) => {
   let selectedPage = event.target.closest(`li`);
   if (!selectedPage) return;
@@ -90,6 +88,7 @@ pageList1.addEventListener(`click`, (event) => {
   displayPosts(selectedPageId);
 });
 
+//Event Listener for pagination on the bottom of the homepage
 pageList2.addEventListener(`click`, (event) => {
   let selectedPage = event.target.closest(`li`);
   if (!selectedPage) return;
@@ -98,6 +97,7 @@ pageList2.addEventListener(`click`, (event) => {
   displayPosts(selectedPageId);
 });
 
+//Getting movie trailer key from API
 const getSelectedMoviesAsHTML = (receivedMovieId) => {
   const movieEndPoint = `https://api.themoviedb.org/3/movie/${receivedMovieId}/videos?api_key=f064c905e826d5e04ed8a01dfa803649&language=en-US`;
   xhr2.open("GET", movieEndPoint);
@@ -107,6 +107,8 @@ const getSelectedMoviesAsHTML = (receivedMovieId) => {
   })
 };
 
+
+//Displaying Each movie as a Modal View
 const displayModal = (receivedMovieId) => {
   if (xhr2.readyState == 4) {
     const jasonData = JSON.parse(xhr.responseText);
@@ -192,7 +194,7 @@ const displayModal = (receivedMovieId) => {
           <div align="justify" class="div-para-style"><strong>${obj.overview}</strong></div>
        </div>
     </div>
-  </article><br><br><br>
+  </article><br><br>
   <p>
   <i><strong>NO MOVIE TRAILER AVAILABLE TO DISPLAY...</strong></i>
   </p>

@@ -39,6 +39,7 @@ div.content {
 
 .modal-card-style {
   min-width: 90%;
+  height: 90%;
 }
 
 .modal-opacity {
@@ -66,7 +67,7 @@ div.content {
 }
 
 section.modal-card-body {
-  max-height: 12.5em;
+  min-height: 12em;
 }
 
 .column-style {
@@ -138,7 +139,7 @@ section.modal-card-body {
 
   .modal-card-style {
     max-width: 98%;
-    font-size: 0.80em;
+    font-size: 0.8em;
   }
 
   .movieIcon {
@@ -165,5 +166,4 @@ section.modal-card-body {
     min-height: 22em;
     width: 100%;
   }
-
 }
