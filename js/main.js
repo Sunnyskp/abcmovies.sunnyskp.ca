@@ -135,7 +135,7 @@ const displayModal = (receivedMovieId) => {
     <figure class="mobileMovieIcon media-left">
           <p class="image  is-32x32"><img class="is-rounded" src="${moviePoster}"></p>
         </figure>
-      <strong>${obj.title}</strong>
+      <div class="movieTitle"><i><strong>${obj.title}</strong></i></div>
     </header>
     <button onclick="location.href = '../index.html';" class="trailerButton button is-link headerButton">Go Back to Home Page</button>
     <section class="modal-card-body modal-opacity">
@@ -162,11 +162,11 @@ const displayModal = (receivedMovieId) => {
         allow="accelerometer; autoplay; encrypted-media;" allowfullscreen>
       </iframe>
      <div>
-     <button  onclick="location.href = '../index.html';" class="trailerButton button is-light is-outlined level">
+     <button  onclick="location.href = '../index.html';" class="trailerButton button is-light level">
      <p class="level-left footerTag"><small><i>Popularity:</i><strong> ${obj.popularity}</strong></small></p>
      <p class="level-left footerTag"><i><strong>&copy; 2019 ABC Movies</strong></i></p>
      <p class="level-right footerTag"><small><i>Vote Count:</i><strong> ${obj.vote_count}</strong></small></p>
-     <a onclick="location.href = '../index.html';" class="footerURL trailerButton is-outlined">Go Back to Home Page</a>
+     <a onclick="location.href = '../index.html';" class="footerURL trailerButton is-link"><i><strong>&copy; 2019 ABC Movies</strong></i></a>
      </button>
      </div>
     </footer>

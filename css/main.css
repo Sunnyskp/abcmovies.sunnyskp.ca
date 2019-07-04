@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.movieTitle {
+  font-size: 1.5em;
+}
+
 div.columns.header-style {
   background-color: #4f3d5a;
 }
@@ -34,7 +38,7 @@ div.content {
 }
 
 .modal-card-style {
-  min-width: 60%;
+  min-width: 90%;
 }
 
 .modal-opacity {
@@ -43,7 +47,7 @@ div.content {
 
 .trailerFrame {
   min-height: 24em;
-  width: 75%;
+  width: 50%;
 }
 
 .modalFooterStyle {
@@ -134,7 +138,7 @@ section.modal-card-body {
 
   .modal-card-style {
     max-width: 98%;
-    font-size: 0.75em;
+    font-size: 0.80em;
   }
 
   .movieIcon {
@@ -156,4 +160,10 @@ section.modal-card-body {
   section.modal-card-body {
     min-height: 14em;
   }
+
+  .trailerFrame {
+    min-height: 22em;
+    width: 100%;
+  }
+
 }
